@@ -2,8 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 var cors = require('cors')
 
-
-
 const taro = require("./taro_utils");
 
 const app = express();
@@ -46,9 +44,10 @@ app.post("/mint-assets", (req, res) => {
 
 // Fetching all the employees
 app.get("/list-assets", (req, res) => {
+	console.log(req.query);
   let reqObj = {
-    host: req.body.host || "localhost:8089",
-    macaroon: req.body.macaroon || "",
+    host: req.query.host || "localhost:8089",
+    macaroon: req.query.macaroon || "",
   };
   taro
     .getAssetList(reqObj.host, reqObj.macaroon)
@@ -61,9 +60,10 @@ app.get("/list-assets", (req, res) => {
 });
 
 app.get("/balance-assets", (req, res) => {
+	console.log("HMM OK")
   let reqObj = {
-    host: req.body.host || "localhost:8089",
-    macaroon: req.body.macaroon || "",
+    host: req.query.host || "localhost:8089",
+    macaroon: req.query.macaroon || "",
   };
   taro
     .getAssetBalance(reqObj.host, reqObj.macaroon)
@@ -176,5 +176,5 @@ app.post("/verify-asset-proof", (req, res) => {
 // Posting a new employee
 
 app.listen(3005, function () {
-  console.log("Server started on port 3000");
+  console.log("Server started on port 3005");
 });

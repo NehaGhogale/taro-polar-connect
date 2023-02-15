@@ -57,7 +57,7 @@ const getAssetList = (host, macaroon) =>{
         console.log("Error getting asset", error);
         reject(error);
       } else {
-        console.log("Response gtting asset: ", JSON.stringify(body));
+        console.log("Response getting asset: ", JSON.stringify(body));
         resolve(body);
       }
     });
@@ -74,7 +74,7 @@ const getAssetBalance = (host, macaroon) =>{
         console.log("Error getting asset balances", error);
         reject(error);
       } else {
-        console.log("Response gtting asset balances: ", JSON.stringify(body));
+        console.log("Response getting asset balances: ", JSON.stringify(body));
         resolve(body);
       }
     });
