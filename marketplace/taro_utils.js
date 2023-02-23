@@ -18,7 +18,7 @@ const mintAsset = (
   name,
   metadata,
   amount,
-  asset_type = "COLLECTIBLE",
+  asset_type = "NORMAL",
   enable_emission = false,
   skip_batch = true
 ) =>{

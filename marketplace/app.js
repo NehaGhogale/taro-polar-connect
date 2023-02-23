@@ -22,7 +22,7 @@ app.post("/mint-assets", (req, res) => {
     macaroon: req.body.macaroon || "",
     name: req.body.asset_name || "",
     metadata: req.body.asset_metadata || "",
-    amount: req.body.asset_amount || 1,
+    amount: req.body.asset_amount || 1000,
   };
   taro
     .mintAsset(
@@ -60,7 +60,6 @@ app.get("/list-assets", (req, res) => {
 });
 
 app.get("/balance-assets", (req, res) => {
-	console.log("HMM OK")
   let reqObj = {
     host: req.query.host || "localhost:8089",
     macaroon: req.query.macaroon || "",
